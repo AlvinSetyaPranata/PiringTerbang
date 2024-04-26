@@ -1,13 +1,13 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
 import Home from '../views/Home'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 export default function Router() {
-  const Stack = createNativeStackNavigator()
+  const Tabs = createBottomTabNavigator()
   
   return (
-    <Stack.Navigator initialRouteName='Home'>
-      <Stack.Screen name="Home" component={Home} />
-    </Stack.Navigator>
+    <Tabs.Navigator initialRouteName='Home'>
+      <Tabs.Screen name="Home" component={Home} options={{headerShown: false}}/>
+    </Tabs.Navigator>
   )
 }
