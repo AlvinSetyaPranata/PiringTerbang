@@ -1,7 +1,7 @@
 import {StyleSheet, Text, Pressable, View} from 'react-native';
 import React from 'react';
 
-export default function CategoryButton({catagoryName}) {
+export default function TombolKategori({catagoryName}) {
   return (
     <View style={style.container}>
       <Pressable style={style.catagoryButton}>
@@ -20,7 +20,7 @@ const style = StyleSheet.create({
   catagoryButton: {
     borderRadius: 100,
     color: 'black',
-    backgroundColor: 'red',
+    backgroundColor: 'yellow',
     width: 60,
     height: 60,
     justifyContent: 'center',

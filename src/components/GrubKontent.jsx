@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Card() {
+export default function GrubKontent({title}) {
   return (
     <View>
-      <Text>Card</Text>
+      <Text>{title}</Text>
     </View>
   )
 }

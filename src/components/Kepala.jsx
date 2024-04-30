@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
-export default function Header() {
+export default function Kepala() {
   return (
     <View style={style.container}>
       <View style={style.header}>
@@ -16,7 +16,7 @@ export default function Header() {
           </View>
         </View>
 
-        <FontAwesomeIcon icon={faMoon} style={style.themeIcon} size={40}/>
+        <FontAwesomeIcon icon={faMoon} style={style.themeIcon} size={25}/>
       </View>
 
       <View style={style.searchContainer}>
@@ -76,5 +76,6 @@ const style = StyleSheet.create({
 
   themeIcon: {
     color: 'white',
+    marginRight: 10
   }
 });
