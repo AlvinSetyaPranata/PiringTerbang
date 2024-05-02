@@ -7,13 +7,10 @@ import {
   faMortarPestle,
   faMugHot,
   faUtensils,
-  faMoon,
-  faMagnifyingGlass
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 
-export default function Beranda({navigation}) {
+export default function Beranda() {
   return (
     <ScrollView>
       <View style={style.headerContainer}>
@@ -28,14 +25,6 @@ export default function Beranda({navigation}) {
             </View>
           </View>
 
-          <FontAwesomeIcon icon={faMoon} style={style.themeIcon} size={25} />
-        </View>
-
-        <View style={style.searchContainer}>
-          <Pressable style={style.search} onPress={() => navigation.navigate("search")}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} color="grey" />
-            <Text style={style.searchPlaceholder}>Silahkan kak</Text>
-          </Pressable>
         </View>
       </View>
 
@@ -45,7 +34,6 @@ export default function Beranda({navigation}) {
           <TombolKategori catagoryName="Makanan" icon={faUtensils} />
           <TombolKategori catagoryName="Minuman" icon={faMugHot} />
           <TombolKategori catagoryName="Penyetan" icon={faMortarPestle} />
-          <TombolKategori catagoryName="Kue" icon={faCake} />
           <TombolKategori catagoryName="Kue" icon={faCake} />
         </ScrollView>
 
@@ -66,7 +54,7 @@ const style = StyleSheet.create({
   headerContainer: {
     backgroundColor: "red",
     paddingTop: 45,
-    paddingBottom: 30,
+    paddingBottom: 20,
     paddingHorizontal: 2,
     rowGap: 20,
   },
@@ -95,27 +83,6 @@ const style = StyleSheet.create({
   subheading: {
     color: "yellow",
     fontSize: 14,
-  },
-
-  searchContainer: {
-    alignItems: "center",
-  },
-
-  search: {
-    backgroundColor: "white",
-    width: 280,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    height: 40,
-
-    alignItems: "center",
-    flexDirection: "row",
-    columnGap: 10,
-  },
-
-  searchPlaceholder: {
-    color: "grey",
-    fontSize: 13,
   },
 
   themeIcon: {

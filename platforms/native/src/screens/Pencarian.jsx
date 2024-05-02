@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 
-export default function Search() {
+export default function Pencarian() {
   return (
     <View>
       <TextInput placeholder="Silahkan kak" style={styles.input} />
