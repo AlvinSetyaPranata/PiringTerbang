@@ -1,11 +1,12 @@
 import {StyleSheet, Text, Pressable, View} from 'react-native';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-export default function TombolKategori({catagoryName}) {
+export default function TombolKategori({catagoryName, icon}) {
   return (
     <View style={style.container}>
       <Pressable style={style.catagoryButton}>
-        <Text>Food</Text>
+        <FontAwesomeIcon icon={icon} size={22}/>
       </Pressable>
       <Text style={style.catagoryText}>{catagoryName}</Text>
     </View>

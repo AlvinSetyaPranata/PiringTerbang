@@ -1,12 +1,12 @@
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import KepalaDescOnly from '../components/KepalaDescOnly';
+import Header from '../components/Header';
 import ItemPesanan from '../components/ItemPesanan';
 
 export default function Keranjang() {
   return (
     <ScrollView>
-      <KepalaDescOnly />
+      <Header />
       <View style={styles.contentContainer}>
         <View style={styles.orderTotalContainer}>
           <View style={styles.orderTotalDisplay}>

@@ -1,13 +1,15 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 export default function KepalaDescOnly() {
   return (
     <View style={styles.container}>
         <View style={styles.headerBrand}>
-            <Image style={styles.headerScreenImage} source={{uri: 'https://apa.png'}}  alt="Image"/>
+            <FontAwesomeIcon icon={faCartShopping} color='white' size={40} />
             <View style={styles.headerScreenDisplay}>
-                <Text style={styles.headerScreenTitle}> Keranjang Anda</Text>
+                <Text style={styles.headerScreenTitle}>Keranjang Anda</Text>
                 <Text style={styles.headerScreenSubtitle}>Berikut isi pesanan anda</Text>
             </View>
         </View>
@@ -19,7 +21,9 @@ const styles = StyleSheet.create({
     container : {
         flexDirection: 'row',
         backgroundColor: 'red',
-        padding: 20
+        paddingHorizontal: 35,
+        paddingTop: 45,
+        paddingBottom: 30
     },
 
     headerBrand: {
@@ -28,20 +32,15 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
-    headerScreenImage: {
-        height: 20,
-        width: 20
-    },
-
     headerScreenDisplay: {
-        rowGap: 5,
-        alignItems: 'flex-start'
+        rowGap: 2,
+        textAlign: 'left'
     },
 
     headerScreenTitle: {
         fontWeight: 'bold',
         color: 'white',
-        fontSize: 20,
+        fontSize: 25,
     },
 
     headerScreenSubtitle: {
