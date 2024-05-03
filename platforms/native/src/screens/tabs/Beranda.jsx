@@ -7,6 +7,7 @@ import {
   faMortarPestle,
   faMugHot,
   faUtensils,
+  
 } from "@fortawesome/free-solid-svg-icons";
 import Header from "../../components/Header";
 
