@@ -1,9 +1,13 @@
-import { Alert, Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import React, { useContext } from "react";
+import { NavigationContext } from "@react-navigation/native"
 
 export default function Kartu({ imageURL, name, price }) {
+
+  const navigation = useContext(NavigationContext)
+
   return (
-    <Pressable style={styles.container}>
+    <Pressable style={styles.container} onPress={() => navigation.navigate('Detail')}>
       <Image
         style={styles.productImage}
         source={{ uri: imageURL }}

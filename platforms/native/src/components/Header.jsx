@@ -1,10 +1,12 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { NavigationContext } from "@react-navigation/native";
 
 
-export default function Header({ navigation, icon, title, subtitle}) {
+export default function Header({ icon, title, subtitle}) {
 
+  const navigation = useContext(NavigationContext)
 
   return (
     <View style={styles.headerContainer}>

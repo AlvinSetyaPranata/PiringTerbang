@@ -1,17 +1,13 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import TombolKembali from "../../components/TombolKembali";
 
-export default function Profil({navigation}) {
+export default function Profil() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.backButtonContainer}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <FontAwesomeIcon icon={faArrowLeft} size={20} />
-        </Pressable>
-      </View>
+      <TombolKembali />
+      
       <View style={styles.profileImage}>
         <Text>AL</Text>
       </View>
@@ -25,13 +21,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
   },
-
-  backButtonContainer: {
-    paddingTop: "16%",
-    paddingLeft: 25,
-    width: "100%",
-  },
-
+  
   profileImage: {
     borderRadius: 100,
     width: 100,

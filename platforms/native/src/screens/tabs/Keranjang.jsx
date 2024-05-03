@@ -8,14 +8,14 @@ export default function Keranjang({navigation}) {
   
   return (
     <ScrollView>
-      <Header navigation={navigation} icon={faCartShopping} title="Keranjang" subtitle="Buruan, keburu diambil orang lho!"/>
+      <Header icon={faCartShopping} title="Keranjang" subtitle="Buruan, keburu diambil orang lho!"/>
       <View style={styles.contentContainer}>
         <View style={styles.orderTotalContainer}>
           <View style={styles.orderTotalDisplay}>
             <Text style={styles.orderTotalTitle}>Total harga</Text>
             <Text style={styles.orderTotalSubtitle}>Rp.500.000</Text>
           </View>
-          <Pressable style={styles.orderButton}>
+          <Pressable style={styles.orderButton} onPress={() => navigation.navigate('Pembayaran')}>
             <Text style={styles.orderButtonTitle}>Pesan Sekarang</Text>
           </Pressable>
         </View>

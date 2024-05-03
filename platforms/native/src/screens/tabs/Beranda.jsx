@@ -12,10 +12,10 @@ import {
 import Header from "../../components/Header";
 
 
-export default function Beranda({navigation}) {
+export default function Beranda() {
   return (
     <ScrollView style={style.container}>
-      <Header navigation={navigation} title="Piring Terbang" subtitle="Cepat sampainya, Puas porsinya" icon={require('../../../assets/brand-icon.png')}/>
+      <Header title="Piring Terbang" subtitle="Cepat sampainya, Puas porsinya" icon={require('../../../assets/brand-icon.png')}/>
 
       {/* end header */}
       <View style={style.content}>
