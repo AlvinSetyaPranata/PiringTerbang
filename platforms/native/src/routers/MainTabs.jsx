@@ -1,6 +1,4 @@
 import React from "react";
-import Beranda from "../screens/Beranda";
-import Keranjang from "../screens/Keranjang";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faCartShopping,
@@ -8,9 +6,9 @@ import {
   faHome,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import Pencarian from "../screens/Pencarian";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Histori from "../screens/Histori";
+import { Beranda, Histori, Keranjang, Pencarian } from "../screens/tabs";
+
 
 export default function MainTabs() {
   const BottomBarIcon = (name, color) => {

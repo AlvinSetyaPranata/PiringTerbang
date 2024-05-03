@@ -1,9 +1,11 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 
 export default function Header({ navigation, icon, title, subtitle}) {
+
+
   return (
     <View style={styles.headerContainer}>
       <View style={styles.header}>
@@ -51,9 +53,10 @@ const styles = StyleSheet.create({
 
   brandContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    columnGap: 10,
+    columnGap: 12,
+    minWidth: 236,
+    overflow: 'hidden'
   },
 
   heading: {

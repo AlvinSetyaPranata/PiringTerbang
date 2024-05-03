@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainTabs from "./MainTabs";
-import Akun from "../screens/Akun";
+import Profil from "../screens/stacks/Profil";
 
 export default function Router() {
   
@@ -11,7 +11,7 @@ export default function Router() {
   return (
    <Stack.Navigator initialRouteName="Utama">
     <Stack.Screen name="Utama" component={MainTabs} options={{headerShown: false}}/>
-    <Stack.Screen name="Akun" component={Akun} options={{headerShown: false}}/>
+    <Stack.Screen name="Akun" component={Profil} options={{headerShown: false}}/>
    </Stack.Navigator>
   );
 }

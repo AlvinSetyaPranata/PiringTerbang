@@ -1,20 +1,20 @@
 import React from "react";
 import { View, StyleSheet, ScrollView, Text, Image } from "react-native";
-import TombolKategori from "../components/TombolKategori";
-import Kartu from "../components/Kartu";
+import TombolKategori from "../../components/TombolKategori";
+import Kartu from "../../components/Kartu";
 import {
   faCake,
   faMortarPestle,
   faMugHot,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 
 export default function Beranda({navigation}) {
   return (
     <ScrollView style={style.container}>
-      <Header navigation={navigation} title="Piring Terbang" subtitle="Cepat sampainya, Puas porsinya" icon={require('../../assets/brand-icon.png')}/>
+      <Header navigation={navigation} title="Piring Terbang" subtitle="Cepat sampainya, Puas porsinya" icon={require('../../../assets/brand-icon.png')}/>
 
       {/* end header */}
       <View style={style.content}>
