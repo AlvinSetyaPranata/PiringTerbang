@@ -3,10 +3,10 @@ import React from 'react';
 import Header from '../components/Header';
 import ItemPesanan from '../components/ItemPesanan';
 
-export default function Keranjang() {
+export default function Keranjang({navigation}) {
   return (
     <ScrollView>
-      <Header />
+      <Header navigation={navigation}/>
       <View style={styles.contentContainer}>
         <View style={styles.orderTotalContainer}>
           <View style={styles.orderTotalDisplay}>
@@ -14,11 +14,12 @@ export default function Keranjang() {
             <Text style={styles.orderTotalSubtitle}>Rp.500.000</Text>
           </View>
           <Pressable style={styles.orderButton}>
-            <Text style={styles.orderButtonTitle}>Lihat pesanan</Text>
+            <Text style={styles.orderButtonTitle}>Pesan Sekarang</Text>
           </Pressable>
         </View>
         <Text style={styles.orderListSectionName}>Makanan</Text>
         <View style={styles.orderList}>
+            <ItemPesanan />
             <ItemPesanan />
             <ItemPesanan />
             <ItemPesanan />
@@ -33,6 +34,7 @@ export default function Keranjang() {
 const styles = StyleSheet.create({
   contentContainer: {
     padding: 30,
+    paddingHorizontal: 20
   },
 
   orderTotalContainer: {
@@ -68,10 +70,12 @@ const styles = StyleSheet.create({
   orderButtonTitle: {
     color: 'black',
     fontSize: 12,
+    fontWeight: "600"
   },
 
   orderList: {
     marginTop: 20,
+    paddingBottom: 100,
     rowGap: 20
 },
 

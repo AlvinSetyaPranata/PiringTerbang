@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Text, Image, Pressable } from "react-native";
+import { View, StyleSheet, ScrollView, Text, Image } from "react-native";
 import TombolKategori from "../components/TombolKategori";
 import Kartu from "../components/Kartu";
 import {
@@ -12,11 +12,11 @@ import {
 
 export default function Beranda() {
   return (
-    <ScrollView>
+    <ScrollView style={style.container}>
       <View style={style.headerContainer}>
         <View style={style.header}>
           <View style={style.brandContainer}>
-            <Image source={require("../../assets/icons/logo.png")} />
+            <Image source={require("../../assets/brand-icon.png")} />
             <View>
               <Text style={style.heading}>Piring Terbang</Text>
               <Text style={style.subheading}>
@@ -51,6 +51,7 @@ export default function Beranda() {
 }
 
 const style = StyleSheet.create({
+  
   headerContainer: {
     backgroundColor: "red",
     paddingTop: 45,
@@ -63,7 +64,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 14,
+    paddingHorizontal: 20,
     paddingVertical: 8,
   },
 
@@ -92,7 +93,8 @@ const style = StyleSheet.create({
 
   content: {
     paddingVertical: 30,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
+    paddingBottom: 100
   },
 
   catagoriesContainer: {
