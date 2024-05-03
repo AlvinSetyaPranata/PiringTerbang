@@ -1,23 +1,30 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
 
-export default function KepalaDescOnly({navigation}) {
+
+export default function Header({ navigation, icon, title, subtitle}) {
   return (
-    <View style={styles.container}>
-      <View style={styles.headerBrand}>
-        <FontAwesomeIcon icon={faCartShopping} color="white" size={40} />
-        <View style={styles.headerScreenDisplay}>
-          <Text style={styles.headerScreenTitle}>Keranjang Anda</Text>
-          <Text style={styles.headerScreenSubtitle}>
-            Berikut isi pesanan anda
-          </Text>
+    <View style={styles.headerContainer}>
+      <View style={styles.header}>
+        <View style={styles.brandContainer}>
+          {
+            typeof icon != 'number' 
+            ? 
+            <FontAwesomeIcon icon={icon} size={40} color="white" />
+              :
+            <Image source={icon} style={{width: 40, height: 40}}/>
+          }
+          <View>
+            <Text style={styles.heading}>{title}</Text>
+            <Text style={styles.subheading}>{subtitle}</Text>
+          </View>
         </View>
       </View>
-      <Pressable style={styles.profileButton} onPress={() => navigation.navigate("Akun")}>
+      <Pressable
+        style={styles.profileButton}
+        onPress={() => navigation.navigate("Akun")}
+      >
         <Text>AL</Text>
       </Pressable>
     </View>
@@ -25,36 +32,39 @@ export default function KepalaDescOnly({navigation}) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
+  headerContainer: {
     backgroundColor: "red",
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingTop: 45,
+    paddingTop: 50,
     paddingBottom: 30,
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
 
-  headerBrand: {
+  header: {
     flexDirection: "row",
-    columnGap: 10,
+    justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 20,
+    paddingVertical: 8,
   },
 
-  headerScreenDisplay: {
-    rowGap: 2,
-    textAlign: "left",
+  brandContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    columnGap: 10,
   },
 
-  headerScreenTitle: {
+  heading: {
     fontWeight: "bold",
     color: "white",
-    fontSize: 25,
+    fontSize: 20,
   },
 
-  headerScreenSubtitle: {
-    fontSize: 14,
+  subheading: {
     color: "yellow",
+    fontSize: 14,
   },
 
   profileButton: {

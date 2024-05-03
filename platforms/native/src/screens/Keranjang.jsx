@@ -1,12 +1,14 @@
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '../components/Header';
 import ItemPesanan from '../components/ItemPesanan';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 export default function Keranjang({navigation}) {
+
   return (
     <ScrollView>
-      <Header navigation={navigation}/>
+      <Header navigation={navigation} icon={faCartShopping} title="Keranjang" subtitle="Buruan, keburu diambil orang lho!"/>
       <View style={styles.contentContainer}>
         <View style={styles.orderTotalContainer}>
           <View style={styles.orderTotalDisplay}>

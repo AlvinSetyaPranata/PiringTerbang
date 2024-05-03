@@ -8,9 +8,9 @@ import {
   faHome,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import Profil from "../screens/Profil";
 import Pencarian from "../screens/Pencarian";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Histori from "../screens/Histori";
 
 export default function MainTabs() {
   const BottomBarIcon = (name, color) => {
@@ -68,7 +68,7 @@ export default function MainTabs() {
       />
       <Tabs.Screen
         name="Histori"
-        component={Profil}
+        component={Histori}
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => BottomBarIcon(faClock, color),

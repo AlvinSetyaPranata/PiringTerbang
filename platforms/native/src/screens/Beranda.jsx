@@ -8,25 +8,13 @@ import {
   faMugHot,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import Header from "../components/Header";
 
 
-export default function Beranda() {
+export default function Beranda({navigation}) {
   return (
     <ScrollView style={style.container}>
-      <View style={style.headerContainer}>
-        <View style={style.header}>
-          <View style={style.brandContainer}>
-            <Image source={require("../../assets/brand-icon.png")} />
-            <View>
-              <Text style={style.heading}>Piring Terbang</Text>
-              <Text style={style.subheading}>
-                Cepat datangnya puas makannya
-              </Text>
-            </View>
-          </View>
-
-        </View>
-      </View>
+      <Header navigation={navigation} title="Piring Terbang" subtitle="Cepat sampainya, Puas porsinya" icon={require('../../assets/brand-icon.png')}/>
 
       {/* end header */}
       <View style={style.content}>
