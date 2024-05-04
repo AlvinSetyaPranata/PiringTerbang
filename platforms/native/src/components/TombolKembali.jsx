@@ -18,8 +18,10 @@ export default function TombolKembali() {
 
 const styles = StyleSheet.create({
   backButtonContainer: {
-    paddingTop: "16%",
+    paddingTop: "12%",
+    paddingBottom: "3%",
     paddingLeft: 25,
     width: "100%",
+    backgroundColor: 'white'
   },
 });

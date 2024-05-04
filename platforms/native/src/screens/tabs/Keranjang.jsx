@@ -17,7 +17,7 @@ export default function Keranjang({navigation}) {
           </View>
           <Pressable style={styles.orderButton} onPress={() => navigation.navigate('Pembayaran')}>
             <Text style={styles.orderButtonTitle}>Pesan Sekarang</Text>
-          </Pressable>
+          </Pressable>  
         </View>
         <Text style={styles.orderListSectionName}>Makanan</Text>
         <View style={styles.orderList}>
