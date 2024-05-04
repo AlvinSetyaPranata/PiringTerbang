@@ -1,10 +1,20 @@
-import { StyleSheet, Switch, Text, View } from "react-native";
+import { Appearance, StyleSheet, Switch, Text, View } from "react-native";
 import React, { useState } from "react";
 import TombolKembali from "../../components/TombolKembali";
 import GrupOpsi from "../../components/GrupOpsi";
 
 export default function Profil() {
   const [darkMode, setDarkMode] = useState(false);
+
+
+  const onThemeToggle = () => {
+    setDarkMode(state => !state)
+    if (darkMode) {
+      Appearance.setColorScheme('light')
+    } else {
+      Appearance.setColorScheme('dark')
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -22,7 +32,7 @@ export default function Profil() {
             <Text style={styles.themeToogleTitle}>Mode malam</Text>
             <Switch
               value={darkMode}
-              onChange={() => setDarkMode((state) => !state)}
+              onChange={onThemeToggle}
             />
           </View>
         </GrupOpsi>

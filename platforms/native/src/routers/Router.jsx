@@ -7,7 +7,6 @@ import Pembayaran from "../screens/stacks/Pembayaran";
 
 export default function Router() {
   const Stack = createNativeStackNavigator();
-
   return (
     <Stack.Navigator initialRouteName="Utama">
       <Stack.Screen
