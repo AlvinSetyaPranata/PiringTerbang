@@ -12,8 +12,3 @@ class Product(models.Model):
     quantity = models.IntegerField()
     catagory = models.ForeignKey(ProductCatagory, on_delete=models.CASCADE)
     date_product = models.DateTimeField(auto_now_add=True, editable=False)
-
-
-class SpecialProduct(models.Model):
-    title = models.CharField(max_length=255)
-    product_name = models.ForeignKey(Product, on_delete=models.CASCADE)
