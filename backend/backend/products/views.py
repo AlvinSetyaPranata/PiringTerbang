@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from products.models import (
     Product, ProductCatagory
 )
-# Create your views here.
-
+from .serializers import (
+    ProductSerializer,
+    ProductCatagorySerializer
+)
 
 class ProductslView(APIView):
     def get(self, _):
@@ -16,17 +18,17 @@ class ProductslView(APIView):
     
 
     def post(self, request):
-        data = request.POST
+        data = ProductSerializer(data=request.POST)
+        
+        if data.is_valid(raise_exception=True):
+            return Response({"Messege" : f"Produk {data['name']}, telah ditambahkan"}, status=status.HTTP_201_CREATED)
 
-
-        print(data)
-
-
-        return Response({})
+        return Response({"Messege" : ""}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 
 class CatagoriesView(APIView):
+
     def get(self, _):
         data = ProductCatagory.objects.all()
 
@@ -35,9 +37,14 @@ class CatagoriesView(APIView):
     
 
     def post(self, request):
-        data = request.POST
 
-        print(data)
+        print(request.POST)
+
+        data = ProductCatagorySerializer(data=request.POST)
+
+
+        if data.is_valid(raise_exception=True):
+            return Response({"Messege" : f"Catagory {data['name']}, telah ditambahkan"}, status=status.HTTP_201_CREATED)
 
 
         return Response({})
