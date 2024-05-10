@@ -14,6 +14,7 @@ from .models import (
     User
 )
 
+# Admin dashboard data
 class UsersView(APIView):
     permission_classes = [IsAdminUser]
 
@@ -23,7 +24,7 @@ class UsersView(APIView):
 
         return Response(users)
     
-
+# User client dashboard data
 class UserView(APIView):
     permission_classes = [IsAuthenticated]
 
