@@ -31,6 +31,7 @@ class CatagoriesView(APIView):
 
     def get(self, _):
         data = ProductCatagory.objects.all()
+        print(data)
 
 
         return Response(data)
