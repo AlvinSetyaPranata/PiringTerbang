@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8q7x819n*nfulqvoqf7_#_c&yf0z-b(8a4t6id+piqewhnzyf=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://alvinsetyapranata.byte.biz.id']
 
 
 # Application definition
@@ -77,11 +77,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'PiringTerbang',
+		'USER': 'admin',
+		'PASSWORD': 'admin123',
+		'HOST':'localhost',
+		'PORT':'3306',
+	}
 }
+
 
 
 # Password validation

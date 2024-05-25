@@ -3,3 +3,4 @@ lib
 pyvenv.cfg
 *.sqlite3
 **/__pycache__
+SSH.txt
