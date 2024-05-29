@@ -5,17 +5,20 @@ on:
     branches: [ main ]  # You can change "main" to your desired branch
 
 jobs:
-  FTP-Deploy-Action:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest  # You can choose a different runner OS if needed
     steps:
+      - name: 🚚 Get latest code
       - uses: actions/checkout@v3  # Checks out your code from GitHub
       - with:
           fetch-depth: 2
-      - name: Use FTP Client
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1 # This action uploads files via FTP
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir:  ${{ env.LOCAL_DIRECTORY }} # Replace with your directory
           server-dir: /home/pfulhebk/repositories/PiringTerbang/backend  # Replace with your cPanel directory
