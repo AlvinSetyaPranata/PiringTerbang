@@ -14,3 +14,4 @@ jobs:
         server:  ftp.byte.biz.id
         username: alvinsetyapranata@byte.biz.id
         password: ${{ secrets.password }}
+        server-dir: /home/pfulhebk/repositories/PiringTerbang/backend
