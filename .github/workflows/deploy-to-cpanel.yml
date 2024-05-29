@@ -5,7 +5,7 @@ on:
     branches: [ main ]  # You can change "main" to your desired branch
 
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest  # You can choose a different runner OS if needed
     steps:
@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 2
 
       - name: 📂 Sync files
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
