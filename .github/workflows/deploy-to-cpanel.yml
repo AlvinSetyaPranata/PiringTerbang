@@ -5,7 +5,7 @@ on:
     branches: [ main ]  # You can change "main" to your desired branch
 
 jobs:
-  deploy:
+  web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest  # You can choose a different runner OS if needed
     steps:
