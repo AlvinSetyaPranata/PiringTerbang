@@ -1,0 +1,19 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [ main ]  # You can change "main" to your desired branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # You can choose a different runner OS if needed
+    steps:
+      - uses: actions/checkout@v3  # Checks out your code from GitHub
+      - name: Use FTP Client
+        uses: eugenesan/ftp-action@v1  # This action uploads files via FTP
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_directory:  ${{ env.LOCAL_DIRECTORY }} # Replace with your directory
+          remote_directory: /home/pfulhebk/repositories/PiringTerbang/backend  # Replace with your cPanel directory
