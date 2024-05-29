@@ -14,4 +14,5 @@ jobs:
         server:  ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/pfulhebk/repositories/PiringTerbang/backend
+        server-dir: ${{ env.SERVER_DIRECTORY }}
+        local-dir: ${{ env.LOCAL_DIRECTORY }}
