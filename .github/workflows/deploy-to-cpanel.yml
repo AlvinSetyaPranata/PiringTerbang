@@ -12,8 +12,8 @@ jobs:
       - name: Use FTP Client
         uses: SamKirkland/FTP-Deploy-Action@3.1.1 # This action uploads files via FTP
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           local_directory:  ${{ env.LOCAL_DIRECTORY }} # Replace with your directory
           remote_directory: /home/pfulhebk/repositories/PiringTerbang/backend  # Replace with your cPanel directory
