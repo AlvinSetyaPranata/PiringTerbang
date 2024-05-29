@@ -6,7 +6,6 @@ on:
 
 jobs:
     web-deploy:
-    name:  Deploy
     runs-on: ubuntu-latest  # You can choose a different runner OS if needed
     steps:
       - uses: actions/checkout@v3  # Checks out your code from GitHub
