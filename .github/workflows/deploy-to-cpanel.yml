@@ -15,5 +15,5 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local_directory:  ${{ env.LOCAL_DIRECTORY }} # Replace with your directory
-          remote_directory: /home/pfulhebk/repositories/PiringTerbang/backend  # Replace with your cPanel directory
+          local-dir:  ${{ env.LOCAL_DIRECTORY }} # Replace with your directory
+          server-dir: /home/pfulhebk/repositories/PiringTerbang/backend  # Replace with your cPanel directory
