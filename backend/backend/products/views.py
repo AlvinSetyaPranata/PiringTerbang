@@ -1,5 +1,6 @@
 from rest_framework import status
-from rest_framework.views import APIView
+# from rest_framework.views import APIView
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from products.models import (
     Product, ProductCatagory
@@ -9,45 +10,54 @@ from .serializers import (
     ProductCatagorySerializer
 )
 
-class ProductslView(APIView):
+class ProductsView(GenericAPIView):
+
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+
+
     def get(self, _):
 
-        data = Product.objects.all()
+        query_data = ProductSerializer(Product.objects.all(), many=True)
 
-        return Response(data)
+        return Response(query_data.data)
+
     
 
     def post(self, request):
+
         data = ProductSerializer(data=request.POST)
         
         if data.is_valid(raise_exception=True):
-            return Response({"Messege" : f"Produk {data['name']}, telah ditambahkan"}, status=status.HTTP_201_CREATED)
+            data.save()
+            return Response({"Messege" : "Produk baru, telah ditambahkan"}, status=status.HTTP_201_CREATED)
 
         return Response({"Messege" : ""}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 
-class CatagoriesView(APIView):
-
-    def get(self, _):
-        data = ProductCatagory.objects.all()
-        print(data)
+class CatagoriesView(GenericAPIView):
+    serializer_class = ProductCatagorySerializer
+    queryset = ProductCatagory.objects.all()
 
 
-        return Response(data)
+    def get(self, _):   
+        query_data = ProductCatagorySerializer(ProductCatagory.objects.all(), many=True)
+
+        return Response(query_data.data)
     
 
     def post(self, request):
 
-        print(request.POST)
 
         data = ProductCatagorySerializer(data=request.POST)
 
 
         if data.is_valid(raise_exception=True):
-            return Response({"Messege" : f"Catagory {data['name']}, telah ditambahkan"}, status=status.HTTP_201_CREATED)
+            data.save()
+
+            return Response({"Messege" : "Catagori baru, telah ditambahkan"}, status=status.HTTP_201_CREATED)
 
 
-        return Response({})
-
+        return Response({"Messege" : ""}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

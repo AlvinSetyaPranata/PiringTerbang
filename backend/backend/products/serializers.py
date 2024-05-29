@@ -1,10 +1,12 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 from .models import (
     Product,
     ProductCatagory
 )
+from .models import ProductCatagory
 
 class ProductSerializer(ModelSerializer):
+    catagory = PrimaryKeyRelatedField(queryset=ProductCatagory.objects.all())
     class Meta:
         model = Product
         fields = '__all__'
