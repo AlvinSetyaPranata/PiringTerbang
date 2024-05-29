@@ -5,17 +5,16 @@ on:
     branches: [ main ]  # You can change "main" to your desired branch
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+    web-deploy:
+    name:  Deploy
     runs-on: ubuntu-latest  # You can choose a different runner OS if needed
     steps:
-      - name: 🚚 Get latest code
       - uses: actions/checkout@v3  # Checks out your code from GitHub
-      - with:
+        with:
           fetch-depth: 2
 
-      - name: 📂 Sync files
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name:  Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
