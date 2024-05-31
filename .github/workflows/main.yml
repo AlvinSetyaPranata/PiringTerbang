@@ -14,5 +14,5 @@ jobs:
         server:  ftp.byte.biz.id
         username: alvinsetyapranata@byte.biz.id
         password: testingthedatabases
-        server-dir: "/home/pfulhebk/repositories/PiringTerbang/backend/"
-        local-dir: "/media/fricheese/Local Disk/temp-projects/PiringTerbang/"
+        server-dir: /home/pfulhebk/repositories/PiringTerbang/backend/
+        local-dir: /media/fricheese/Local Disk/temp-projects/PiringTerbang/
