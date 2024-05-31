@@ -11,8 +11,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server:  ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ env.SERVER_DIRECTORY }}
-        local-dir: ${{ env.LOCAL_DIRECTORY }}
+        server:  ftp.byte.biz.id
+        username: alvinsetyapranata@byte.biz.id
+        password: testingthedatabases
+        server-dir: "/home/pfulhebk/repositories/PiringTerbang/backend/"
+        local-dir: "/media/fricheese/Local Disk/temp-projects/PiringTerbang/"
