@@ -12,11 +12,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from os import getenv
+import pymysql
 
 from dotenv import load_dotenv
 
 # Load all keys from dotenv
 load_dotenv()
+
+# Load PyMysQl engine
+pymysql.install_as_MySQLdb()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,11 +91,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'PiringTerbang',
-		'USER': 'admin',
-		'PASSWORD': 'admin123',
-		'HOST':'localhost',
-		'PORT':'3306',
+		'NAME': str(getenv('DATABASE_NAME')),
+		'USER': str(getenv('DATABASE_USERNAME')),
+		'PASSWORD': str(getenv('DATABASE_PASSWORD')),
+		'HOST': str(getenv('DATABASE_HOST')),
+		'PORT': str(getenv('DATABASE_PORT')),
 	}
 }
 
