@@ -96,6 +96,9 @@ DATABASES = {
 		'PASSWORD': str(getenv('DATABASE_PASSWORD')),
 		'HOST': str(getenv('DATABASE_HOST')),
 		'PORT': str(getenv('DATABASE_PORT')),
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        }
 	}
 }
 
