@@ -1,19 +1,19 @@
 from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 from .models import (
     Product,
-    ProductCatagory
+    ProductCategory
 )
-from .models import ProductCatagory
+from .models import ProductCategory
 
 class ProductSerializer(ModelSerializer):
-    catagory = PrimaryKeyRelatedField(queryset=ProductCatagory.objects.all())
+    Category = PrimaryKeyRelatedField(queryset=ProductCategory.objects.all())
     class Meta:
         model = Product
         fields = '__all__'
         depth = 1
 
 
-class ProductCatagorySerializer(ModelSerializer):
+class ProductCategorySerializer(ModelSerializer):
     class Meta:
-        model = ProductCatagory
+        model = ProductCategory
         fields = '__all__'

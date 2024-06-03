@@ -3,11 +3,11 @@ from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from products.models import (
-    Product, ProductCatagory
+    Product, ProductCategory
 )
 from .serializers import (
     ProductSerializer,
-    ProductCatagorySerializer
+    ProductCategorySerializer
 )
 
 class ProductsView(GenericAPIView):
@@ -18,7 +18,7 @@ class ProductsView(GenericAPIView):
 
     def get(self, _):
 
-        query_data = ProductSerializer(Product.objects.all(), many=True)
+        query_data = ProductSerializer(Product.objects.all().order_by('id'), many=True)
 
         return Response(query_data.data)
 
@@ -36,13 +36,13 @@ class ProductsView(GenericAPIView):
 
 
 
-class CatagoriesView(GenericAPIView):
-    serializer_class = ProductCatagorySerializer
-    queryset = ProductCatagory.objects.all()
+class CategoriesView(GenericAPIView):
+    serializer_class = ProductCategorySerializer
+    queryset = ProductCategory.objects.all()
 
 
     def get(self, _):   
-        query_data = ProductCatagorySerializer(ProductCatagory.objects.all(), many=True)
+        query_data = ProductCategorySerializer(ProductCategory.objects.all().order_by('id'), many=True)
 
         return Response(query_data.data)
     
@@ -50,13 +50,13 @@ class CatagoriesView(GenericAPIView):
     def post(self, request):
 
 
-        data = ProductCatagorySerializer(data=request.POST)
+        data = ProductCategorySerializer(data=request.POST)
 
 
         if data.is_valid(raise_exception=True):
             data.save()
 
-            return Response({"Messege" : "Catagori baru, telah ditambahkan"}, status=status.HTTP_201_CREATED)
+            return Response({"Messege" : "Categori baru, telah ditambahkan"}, status=status.HTTP_201_CREATED)
 
 
         return Response({"Messege" : ""}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
