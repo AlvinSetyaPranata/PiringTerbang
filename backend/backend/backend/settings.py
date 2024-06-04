@@ -36,7 +36,7 @@ SECRET_KEY = str(getenv("SECRET_KEY"))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['http://alvinsetyapranata.byte.biz.id', '127.0.0.1']
+ALLOWED_HOSTS = ['https://alvinsetyapranata.byte.biz.id', '127.0.0.1', 'alvinsetyapranata.byte.biz.id']
 
 
 # Application definition
