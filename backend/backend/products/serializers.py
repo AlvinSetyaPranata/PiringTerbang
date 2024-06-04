@@ -6,7 +6,7 @@ from .models import (
 from .models import ProductCategory
 
 class ProductSerializer(ModelSerializer):
-    Category = PrimaryKeyRelatedField(queryset=ProductCategory.objects.all())
+    category = PrimaryKeyRelatedField(queryset=ProductCategory.objects.all())
     class Meta:
         model = Product
         fields = '__all__'
