@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(getenv("SECRET_KEY"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = int(getenv('DEVELOPMENT'))
 
 ALLOWED_HOSTS = ['https://alvinsetyapranata.byte.biz.id', '127.0.0.1', 'alvinsetyapranata.byte.biz.id']
 
