@@ -3,9 +3,9 @@
 <h3 align="center">Pesan makanan hanya dengan sekali klik</h3>
 
 
-## Teknologi yang digunakan
+## Platforms dengan Teknologi yang digunakan
 - Android: React Native
-- IOS: N/A
+- IOS: React Native
 - Backend: Django
 - Website: Next JS
 
