@@ -7,7 +7,7 @@
 - Android: React Native
 - IOS: N/A
 - Backend: Django
-- Frontend Website: N/A
+- Website: Next JS
 
 **Tunggu apalagi?, segera download sekarang, Te-he ;p**
 
