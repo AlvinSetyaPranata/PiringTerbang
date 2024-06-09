@@ -1,29 +1,36 @@
 "use client";
 
+import { AnimatePresence, easeIn, easeOut, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 
 export default function Banner() {
   const [activeSlide, setActiveSlide] = useState(1);
-  const src =
-    "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/25033025/resep-masakan-sehari-hari-yang-mudah-dan-anti-bosan-halodoc.jpg.webp";
+  const src = [
+    "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/25033025/resep-masakan-sehari-hari-yang-mudah-dan-anti-bosan-halodoc.jpg.webp",
+    "https://akcdn.detik.net.id/visual/2022/06/07/adv-rankpillar_169.jpeg?w=800&q=90",
+  ];
 
   return (
     <div className="w-full px-8 text-white min-h-[75vh] flex items-center overflow-hidden relative">
-      <div className="absolute min-w-full min-h-[75vh] -z-10 left-0 bg-gradient-to-r from-black from-50%"></div>
-      <Image
-        loader={() => src}
-        src={src}
-        alt="banner"
-        width={0}
-        height={0}
-        style={{ objectFit: "cover" }}
-        className="absolute right-0 w-1/2 min-h-[75vh] -z-20"
-      />
+      <div className="absolute min-w-full min-h-[75vh] -z-10 left-0 bg-gradient-to-r from-black from-55%"></div>
+      <AnimatePresence>
+        <motion.img
+          key={src[activeSlide - 1]}
+          src={src[activeSlide - 1]}
+          alt="image"
+          className="absolute right-0 -z-20 w-full min-h-[75vh]"
+          exit={{ opacity: 0, transition: {duration: 1.5, ease: easeOut} }}
+          initial={{ opacity: 0, transition: {duration: 1.5, ease: easeOut} }}
+          animate={{ opacity: 1, transition: {duration: 1.5, ease: easeIn} }}
+        />
+      </AnimatePresence>
+      <div className="absolute min-w-full min-h-full -z-30 left-0 bg-black"></div>
+
       <div>
         <h1 className="text-5xl font-bold">Masakan padang baru!</h1>
         <p className="text-gray-300 mt-3 max-w-[50ch]">
-          Kenalkan masakana pedas yang dapat membuat lidah anda bergoyang
+          Memperkenalkan masakan pedas yang dapat membuat lidah anda bergoyang
         </p>
         <button className="px-4 py-3 mt-6 bg-red-600 text-white rounded-md">
           Pesan sekarang

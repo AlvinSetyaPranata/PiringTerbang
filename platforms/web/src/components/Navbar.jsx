@@ -5,7 +5,10 @@ export default function Navbar() {
     <div className="flex items-center justify-between py-4 px-6 w-full box-border bg-red-600 text-white">
       <div className="flex gap-x-4 items-center">
         <img src="/logo.svg" alt="logo" />
-        <h1 className="text-2xl font-bold">PiringTerbang</h1>
+        <div>
+          <h1 className="text-2xl font-bold">PiringTerbang</h1>
+          <p className="text-sm text-yellow-200">Puas makannya, hemat kantongnya</p>
+        </div>
       </div>
 
       <div className="flex gap-x-12 font-semibold">
