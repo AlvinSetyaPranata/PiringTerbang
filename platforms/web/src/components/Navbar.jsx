@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
@@ -12,9 +13,9 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-x-12 font-semibold">
-        <p>Beranda</p>
-        <p>Baru</p>
-        <p>Diskon</p>
+        <Link href="#">Beranda</Link>
+        <Link href="#">Baru</Link>
+        <Link href="#">Cari</Link>
       </div>
 
       <div className="flex gap-x-4">
