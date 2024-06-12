@@ -1,18 +1,14 @@
 import React from "react";
 import Card from "./Card";
 
-export default function CardGroup() {
+export default function CardGroup({data}) {
   return (
     <div className="w-full">
       <h1 className="font-semibold text-2xl mb-6">Masih hangat</h1>
       <div className="flex w-full overflow-x-auto gap-x-12 items-center">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {data && data.map((item, index) => (
+          <Card name={item.name} price={item.price} key={index}/>
+        ))}
       </div>
     </div>
   );
