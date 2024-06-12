@@ -15,16 +15,15 @@ export default function Banner() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('called');
       setActiveSlide(state => (state + 1) % src.length)
 
       return () => clearInterval(interval)
-    }, 5000);    
+    }, 8000);    
   }, [])
 
   return (
-    <div className="w-full px-8 text-white min-h-[75vh] flex items-center overflow-hidden relative">
-      <div className="absolute min-w-full min-h-[75vh] -z-10 left-0 bg-gradient-to-r from-black from-55%"></div>
+    <div className="w-full px-8 text-white min-h-[60vh] flex items-center overflow-hidden relative">
+      <div className="absolute min-w-full min-h-full -z-10 left-0 bg-black bg-opacity-75"></div>
       <AnimatePresence>
         <motion.img
           key={src[activeSlide]}
